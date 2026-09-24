@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS SRE Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header>
+            <h1>AWS SRE Dashboard</h1>
+            <p>Infrastructure & Application Health</p>
+        </header>
+
+        <section class="status-card">
+            <div>
+                <h2>Overall System Status</h2>
+                <p>All systems operational</p>
+            </div>
+
+            <span class="status healthy">● HEALTHY</span>
+        </section>
+
+        <section class="metrics">
+
+            <div class="metric-card">
+                <h3>Uptime</h3>
+                <p>{{ uptime }} seconds</p>
+            </div>
+
+            <div class="metric-card">
+                <h3>Response Time</h3>
+                <p>{{ response_time }}</p>
+            </div>
+
+            <div class="metric-card">
+                <h3>Error Rate</h3>
+                <p> {{ error_rate }}%</p>
+            </div>
+
+            <div class="metric-card">
+                <h3>Requests</h3>
+                <p>{{ request_count }}</p>
+            </div>
+
+        </section>
+
+        <section class="servers">
+
+            <h2>EC2 Instances</h2>
+
+            <div class="server">
+                <div>
+                    <h3>Server 1</h3>
+                    <p>Production Application</p>
+                </div>
+
+                <span class="status healthy">● RUNNING</span>
+            </div>
+
+            <div class="server">
+                <div>
+                    <h3>Server 2</h3>
+                    <p>Production Application</p>
+                </div>
+
+                <span class="status healthy">● RUNNING</span>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
